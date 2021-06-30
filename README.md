@@ -22,6 +22,8 @@ Dependency:
 
 ## Installation
 Fire up your realm and just enable the `Realms-API` plugin in your plugin manager.
+
+
 ![Plugin Manager](https://i.imgur.com/XW4S9vO.png)
 ## Providers
 There are the following providers available:
