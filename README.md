@@ -1,4 +1,4 @@
-![enter image description here](https://www.cytooxien.de/data/assets/logo/Cy_T3.png)
+![Logo](https://www.cytooxien.de/data/assets/logo/Cy_T3.png)
 # Realms Api
 This is the repository of the Cytooxien Realm API. Here you can find the wiki which contain basic information about the usage of this API.
 
@@ -22,7 +22,7 @@ Dependency:
 
 ## Installation
 Fire up your realm and just enable the `Realms-API` plugin in your plugin manager.
-![enter image description here](https://img.exceptionflug.de/javaw_2IFmc18COR.png)
+![Plugin Manager](https://img.exceptionflug.de/javaw_2IFmc18COR.png)
 ## Providers
 There are the following providers available:
 | Class name | Description |
