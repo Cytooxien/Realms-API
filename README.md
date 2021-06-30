@@ -1,4 +1,4 @@
-![Logo](https://i.imgur.com/D66qjUY.png)
+![Logo](https://i.imgur.com/6QQrjjA.png)
 # Realms Api
 This is the repository of the Cytooxien Realm API. Here you can find the wiki which contain basic information about the usage of this API.
 
