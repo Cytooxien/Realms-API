@@ -6,7 +6,7 @@ import de.exceptionflug.realms.api.model.Limits;
  * This interface provides basic information about the realm.
  * It is possible to update some realm settings here like
  * the maximum allowed player count, the name or some other stuff.
- *
+ * <br><br>
  * Date: 30.06.2021
  * @author Exceptionflug
  */
