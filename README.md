@@ -5,9 +5,10 @@ This is the repository of the Cytooxien Realm API. Here you can find the wiki wh
 ## Maven
 Repository:
 ```xml
-<repository>  
-   <id>exceptionflug</id>  
-   <url>https://mvn.exceptionflug.de/repository/exceptionflug-public/</url>  
+<repository>
+    <id>github-realms-api</id>
+    <name>GitHub Packages</name>
+    <url>https://maven.pkg.github.com/Cytooxien/Realms-API</url>
 </repository>
 ```
 Dependency:
