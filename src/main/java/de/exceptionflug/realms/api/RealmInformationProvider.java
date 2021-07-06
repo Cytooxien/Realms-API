@@ -39,6 +39,11 @@ public interface RealmInformationProvider {
     int maxPlayers();
 
     /**
+     * @return the amount of currently active boosts
+     */
+    int boostCount();
+
+    /**
      * Limits are specified by the realm boost level.
      *
      * @return the current realm limits
