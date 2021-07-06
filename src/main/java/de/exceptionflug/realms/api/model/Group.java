@@ -35,12 +35,24 @@ public class Group {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Group group = (Group) o;
-        return color == group.color && priority == group.priority && name.equals(group.name) && prefix.equals(group.prefix) && permissions.equals(group.permissions);
+        return color == group.color && priority == group.priority && uniqueId.equals(group.uniqueId) && name.equals(group.name) && prefix.equals(group.prefix) && permissions.equals(group.permissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, prefix, color, priority, permissions);
+        return Objects.hash(uniqueId, name, prefix, color, priority, permissions);
+    }
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "uniqueId=" + uniqueId +
+                ", name='" + name + '\'' +
+                ", prefix='" + prefix + '\'' +
+                ", color=" + color +
+                ", priority=" + priority +
+                ", permissions=" + permissions +
+                '}';
     }
 
     public String name() {
