@@ -42,10 +42,11 @@ public interface RealmPermissionProvider {
     Group boosterGroup();
 
     /**
+     * This method is rate limited.
      * @param groupId the id of the group
      * @return a Set containing the unique ids of all group members
      */
-    Set<UUID> groupMembers(UUID groupId);
+    Action<Set<UUID>> groupMembers(UUID groupId);
 
     /**
      * Looks for a group with the specified name
