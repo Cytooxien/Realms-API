@@ -38,7 +38,6 @@ There are the following providers available:
 | Class name | Description |
 |--|--|
 | RealmInformationProvider | Basic information and settings of the realm |
-| RealmPluginProvider | Lets you access the realm PluginManager instance |
 | RealmPermissionProvider | Allows you to access and realm permission groups |
 
 
