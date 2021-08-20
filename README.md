@@ -28,19 +28,6 @@ Dependencies:
 </dependency>
 ```
 
-## Installation
-Fire up your realm and just enable the `Realms-API` plugin in your plugin manager.
-
-
-![Plugin Manager](https://i.imgur.com/XW4S9vO.png)
-## Providers
-There are the following providers available:
-| Class name | Description |
-|--|--|
-| RealmInformationProvider | Basic information and settings of the realm |
-| RealmPermissionProvider | Allows you to access and realm permission groups |
-
-
 ## Access Providers
 All providers are registered using Bukkit's internal `ServicesManager`. This is how you get an instance of a provider:
 ```java
