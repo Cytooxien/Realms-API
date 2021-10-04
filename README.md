@@ -16,7 +16,7 @@ Dependencies:
 <dependency>  
    <groupId>de.exceptionflug</groupId>  
    <artifactId>realms-api</artifactId>  
-   <version>1.1-SNAPSHOT</version>  
+   <version>1.2-SNAPSHOT</version>  
    <scope>provided</scope>  
 </dependency>
 <!-- Cytooxien Realms Display System -->
