@@ -72,7 +72,7 @@ public interface RealmWorldProvider {
      * This will load an unloaded world and will mark the world as loaded in the world system. If the world is already
      * loaded, the instance of the loaded world will directly be returned.
      * @param uniqueId The unique id of the world to load
-     * @return The loaded bukkit world instance
+     * @return The loaded bukkit world instance or null if the world could not be loaded
      */
     World loadWorld(UUID uniqueId);
 
