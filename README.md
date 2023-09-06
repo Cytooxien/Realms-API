@@ -28,6 +28,25 @@ Dependencies:
 </dependency>
 ```
 
+## Gradle
+Repository:
+```gradle
+repositories {
+    maven {
+        url 'https://mvn.exceptionflug.de/repository/exceptionflug-public/'
+    }
+}
+```
+Dependencies:
+```gradle
+dependencies {
+    <!-- Actual RealmsAPI -->
+    implementation 'de.exceptionflug:realms-api:1.2-20211008.144955-5'
+    <!-- Cytooxien Realms Display System -->
+    implementation 'de.cytooxien.realms:realms-spigot-display:0.1'
+}
+```
+
 ## Access Providers
 All providers are registered using Bukkit's internal `ServicesManager`. This is how you get an instance of a provider:
 ```java
