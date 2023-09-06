@@ -2,6 +2,8 @@ package de.exceptionflug.realms.api;
 
 import de.exceptionflug.realms.api.model.Limits;
 
+import java.util.UUID;
+
 /**
  * This interface provides basic information about the realm.
  * It is possible to update some realm settings here like
@@ -42,6 +44,13 @@ public interface RealmInformationProvider {
      * @return the amount of currently active boosts
      */
     int boostCount();
+
+    /**
+     * This will query the amount of active boosts, that a player has used on that realm.
+     * @param playerId the player id to check
+     * @return the count of boosts
+     */
+    Action<Integer> boostsByPlayer(UUID playerId);
 
     /**
      * Limits are specified by the realm boost level.
