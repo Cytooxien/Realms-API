@@ -21,14 +21,16 @@ public class Group {
     private final Component prefix;
     private final char color;
     private final int priority;
+    private final int requiredBoosts;
     private final Set<String> permissions;
 
-    private Group(UUID uniqueId, String name, Component prefix, char color, int priority, Set<String> permissions) {
+    private Group(UUID uniqueId, String name, Component prefix, char color, int priority, int requiredBoosts, Set<String> permissions) {
         this.uniqueId = uniqueId;
         this.name = name;
         this.prefix = prefix;
         this.color = color;
         this.priority = priority;
+        this.requiredBoosts = requiredBoosts;
         this.permissions = permissions;
     }
 
@@ -42,7 +44,7 @@ public class Group {
 
     @Override
     public int hashCode() {
-        return Objects.hash(uniqueId, name, prefix, color, priority, permissions);
+        return Objects.hash(uniqueId, name, prefix, color, priority,requiredBoosts, permissions);
     }
 
     @Override
@@ -53,6 +55,7 @@ public class Group {
                 ", prefix='" + prefix + '\'' +
                 ", color=" + color +
                 ", priority=" + priority +
+                ", requiredBoosts=" + requiredBoosts +
                 ", permissions=" + permissions +
                 '}';
     }
@@ -81,8 +84,8 @@ public class Group {
         return uniqueId;
     }
 
-    public static Group create(UUID uuid, String name, Component prefix, char color, int priority, Set<String> permissions) {
-        return new Group(uuid, name, prefix, color, priority, permissions);
+    public static Group create(UUID uuid, String name, Component prefix, char color, int priority, int requiredBoosts, Set<String> permissions) {
+        return new Group(uuid, name, prefix, color, priority, requiredBoosts, permissions);
     }
 
 }
