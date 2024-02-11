@@ -2,6 +2,7 @@ package de.exceptionflug.realms.api;
 
 import com.mojang.authlib.properties.Property;
 
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -33,5 +34,12 @@ public interface PlayerInformationProvider {
      * @return The property or null if the player was never on cytooxien
      */
     Property textureProperty(UUID uniqueId);
+
+    /**
+     * This will return the Cytooxien language of that player.
+     * @param uniqueId The unique id of the player
+     * @return The language the player has selected
+     */
+    String language(UUID uniqueId);
 
 }

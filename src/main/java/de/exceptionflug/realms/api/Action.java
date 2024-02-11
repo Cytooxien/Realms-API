@@ -19,7 +19,7 @@ public interface Action<T> {
     boolean success();
 
     /**
-     * Returns the whether this action was rate-limited. If an action is rate-limited, it hasn't been executed.
+     * Returns whether this action was rate-limited, or not. If an action is rate-limited, it hasn't been executed.
      * success() will also return false.
      *
      * @return True if the action has been rate-limited

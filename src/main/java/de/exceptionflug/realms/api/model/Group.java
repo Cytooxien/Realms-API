@@ -1,5 +1,7 @@
 package de.exceptionflug.realms.api.model;
 
+import net.kyori.adventure.text.Component;
+
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
@@ -16,12 +18,12 @@ public class Group {
 
     private final UUID uniqueId;
     private final String name;
-    private final String prefix;
+    private final Component prefix;
     private final char color;
     private final int priority;
     private final Set<String> permissions;
 
-    private Group(UUID uniqueId, String name, String prefix, char color, int priority, Set<String> permissions) {
+    private Group(UUID uniqueId, String name, Component prefix, char color, int priority, Set<String> permissions) {
         this.uniqueId = uniqueId;
         this.name = name;
         this.prefix = prefix;
@@ -59,7 +61,7 @@ public class Group {
         return name;
     }
 
-    public String prefix() {
+    public Component prefix() {
         return prefix;
     }
 
@@ -79,7 +81,7 @@ public class Group {
         return uniqueId;
     }
 
-    public static Group create(UUID uuid, String name, String prefix, char color, int priority, Set<String> permissions) {
+    public static Group create(UUID uuid, String name, Component prefix, char color, int priority, Set<String> permissions) {
         return new Group(uuid, name, prefix, color, priority, permissions);
     }
 

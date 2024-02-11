@@ -35,11 +35,19 @@ public interface RealmPermissionProvider {
     Group ownerGroup();
 
     /**
-     * The booster group will automatically be added to a player when the player has at least one currently active boost.
-     * The player will automatically be removed from this group when the last active boost of the player expires.
+     * The booster group will automatically be added to a player when the player has at least <code>n</code> currently
+     * active boost(s). The player will automatically be removed from this group when the last active boost of the
+     * player expires that is required by this group.
      * @return the booster group
      */
-    Group boosterGroup();
+    Group boosterGroup(int boosts);
+
+    /**
+     * This returns a list with all groups that can be automatically granted by boosting the realm. Sorted by natural
+     * order.
+     * @return All booster groups of the realm
+     */
+    List<Group> boosterGroups();
 
     /**
      * This method is rate limited.
