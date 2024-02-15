@@ -53,14 +53,14 @@ public interface DisplayProvider {
      *
      * @return The {@link Component} representing the current tab list suffix or null if none is set.
      */
-    Component getTabSuffix();
+    Component getTabSuffix(Player player);
 
     /**
      * Retrieves the current suffix set for players in chat messages.
      *
      * @return The {@link Component} representing the current chat message suffix or null if none is set.
      */
-    Component getChatSuffix();
+    Component getChatSuffix(Player player);
 
     /**
      * Retrieves the current custom prefix set for players in the tab list. If you want to get the prefix of the
@@ -68,7 +68,7 @@ public interface DisplayProvider {
      *
      * @return The {@link Component} representing the current tab list prefix or null if none is set.
      */
-    Component getCustomTabPrefix();
+    Component getCustomTabPrefix(Player player);
 
     /**
      * Retrieves the current custom prefix set for players in chat messages. If you want to get the prefix of the
@@ -76,6 +76,6 @@ public interface DisplayProvider {
      *
      * @return The {@link Component} representing the current chat message prefix or null if none is set.
      */
-    Component getCustomChatPrefix();
+    Component getCustomChatPrefix(Player player);
 
 }
