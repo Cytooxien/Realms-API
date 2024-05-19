@@ -6,7 +6,7 @@
 
     <groupId>de.cytooxien</groupId>
     <artifactId>realms-api</artifactId>
-    <version>3.0-SNAPSHOT</version>
+    <version>3.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -14,11 +14,11 @@
     </properties>
 
     <distributionManagement>
-        <snapshotRepository>
+        <repository>
             <id>github</id>
             <name>GitHub Cytooxien Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/Cytooxien/Realms-API</url>
-        </snapshotRepository>
+        </repository>
     </distributionManagement>
 
     <repositories>
