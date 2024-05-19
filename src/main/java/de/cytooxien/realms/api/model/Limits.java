@@ -1,4 +1,4 @@
-package de.exceptionflug.realms.api.model;
+package de.cytooxien.realms.api.model;
 
 import java.util.Objects;
 

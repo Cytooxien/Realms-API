@@ -1,4 +1,4 @@
-package de.exceptionflug.realms.api.world;
+package de.cytooxien.realms.api.world;
 
 /**
  * Date: 08.10.2021

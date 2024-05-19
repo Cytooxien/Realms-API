@@ -1,6 +1,6 @@
-package de.exceptionflug.realms.api;
+package de.cytooxien.realms.api;
 
-import de.exceptionflug.realms.api.model.Group;
+import de.cytooxien.realms.api.model.Group;
 
 import java.util.Comparator;
 import java.util.List;

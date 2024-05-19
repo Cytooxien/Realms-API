@@ -1,4 +1,4 @@
-package de.exceptionflug.realms.api;
+package de.cytooxien.realms.api;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;

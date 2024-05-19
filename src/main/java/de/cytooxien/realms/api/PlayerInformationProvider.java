@@ -1,4 +1,4 @@
-package de.exceptionflug.realms.api;
+package de.cytooxien.realms.api;
 
 import com.mojang.authlib.properties.Property;
 

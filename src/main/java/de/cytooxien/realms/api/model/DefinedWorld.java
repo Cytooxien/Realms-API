@@ -1,7 +1,7 @@
-package de.exceptionflug.realms.api.model;
+package de.cytooxien.realms.api.model;
 
-import de.exceptionflug.realms.api.world.WorldPreset;
-import de.exceptionflug.realms.api.world.WorldRule;
+import de.cytooxien.realms.api.world.WorldPreset;
+import de.cytooxien.realms.api.world.WorldRule;
 
 import java.io.File;
 import java.util.Map;

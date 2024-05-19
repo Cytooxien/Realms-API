@@ -1,4 +1,4 @@
-package de.exceptionflug.realms.api;
+package de.cytooxien.realms.api;
 
 /**
  * An {@link Action} is the result of most of the methods provided by the api.

@@ -6,25 +6,17 @@ This is the repository of the Cytooxien Realm API. Here you can find the wiki wh
 Repository:
 ```xml
 <repository>  
-   <id>exceptionflug</id>  
-   <url>https://mvn.exceptionflug.de/repository/exceptionflug-public/</url>  
+   <id>cytooxien-realms-api</id>  
+   <url>https://maven.pkg.github.com/Cytooxien/Realms-API</url>  
 </repository>
 ```
 Dependencies:
 ```xml
-<!-- Actual RealmsAPI -->
 <dependency>  
-   <groupId>de.exceptionflug</groupId>  
+   <groupId>de.cytooxien</groupId>  
    <artifactId>realms-api</artifactId>  
-   <version>1.2-SNAPSHOT</version>  
+   <version>3.0-SNAPSHOT</version>  
    <scope>provided</scope>  
-</dependency>
-<!-- Cytooxien Realms Display System -->
-<dependency>
-  <groupId>de.cytooxien.realms</groupId>
-  <artifactId>realms-spigot-display</artifactId>
-  <version>0.1</version>
-  <scope>provided</scope>
 </dependency>
 ```
 
@@ -33,17 +25,14 @@ Repository:
 ```gradle
 repositories {
     maven {
-        url 'https://mvn.exceptionflug.de/repository/exceptionflug-public/'
+        url 'https://maven.pkg.github.com/Cytooxien/Realms-API'
     }
 }
 ```
 Dependencies:
 ```gradle
 dependencies {
-    <!-- Actual RealmsAPI -->
-    implementation 'de.exceptionflug:realms-api:1.2-20211008.144955-5'
-    <!-- Cytooxien Realms Display System -->
-    implementation 'de.cytooxien.realms:realms-spigot-display:0.1'
+    compileOnly 'de.cytooxien:realms-api:3.0-SNAPSHOT'
 }
 ```
 

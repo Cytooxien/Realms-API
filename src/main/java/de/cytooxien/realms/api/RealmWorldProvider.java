@@ -1,7 +1,7 @@
-package de.exceptionflug.realms.api;
+package de.cytooxien.realms.api;
 
-import de.exceptionflug.realms.api.model.DefinedWorld;
-import de.exceptionflug.realms.api.world.WorldRule;
+import de.cytooxien.realms.api.model.DefinedWorld;
+import de.cytooxien.realms.api.world.WorldRule;
 import org.bukkit.World;
 
 import java.util.List;

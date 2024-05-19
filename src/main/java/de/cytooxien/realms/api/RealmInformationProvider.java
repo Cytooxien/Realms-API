@@ -1,6 +1,6 @@
-package de.exceptionflug.realms.api;
+package de.cytooxien.realms.api;
 
-import de.exceptionflug.realms.api.model.Limits;
+import de.cytooxien.realms.api.model.Limits;
 import net.kyori.adventure.text.Component;
 
 import java.util.UUID;
