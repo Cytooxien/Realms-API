@@ -1,6 +1,7 @@
 package de.exceptionflug.realms.api;
 
 import de.exceptionflug.realms.api.model.Limits;
+import net.kyori.adventure.text.Component;
 
 import java.util.UUID;
 
@@ -20,7 +21,7 @@ public interface RealmInformationProvider {
      *
      * @return the display name of the realm.
      */
-    String realmDisplayName();
+    Component realmDisplayName();
 
     /**
      * Returns the description of the realm which is visible in the realm overview
@@ -63,7 +64,7 @@ public interface RealmInformationProvider {
      * The promotion state of the realm. A promoted realm will always be shown first on the lobby's
      * realm overview menu and at the banner stand. Only VIPs and higher are privileged to mark a realm as promoted.
      *
-     * <br><br> Since a realm doesn't know it's promotion state, it has to be requested at the Cytooxien Realms
+     * <br><br> Since a realm doesn't know its promotion state, it has to be requested at the Cytooxien Realms
      * Backend Management service. So this method returns an {@link Action} and is rate-limited.
      *
      * @return The action containing information about the promotion state of the realm.
@@ -71,10 +72,10 @@ public interface RealmInformationProvider {
     Action<Boolean> promotedRealm();
 
     /**
-     * A realm is able to have it's own address. Using this address, players can directly join onto the running realm
+     * A realm is able to have its own address. Using this address, players can directly join onto the running realm
      * without joining on Cytooxien first.
      *
-     * <br><br> Since a realm doesn't know it's subdomain, it has to be requested at the Cytooxien Realms
+     * <br><br> Since a realm doesn't know its subdomain, it has to be requested at the Cytooxien Realms
      * Backend Management service. So this method returns an {@link Action} and is rate-limited.
      *
      * @return The action containing the FQDN under which the realm can also be joined.
@@ -83,14 +84,25 @@ public interface RealmInformationProvider {
 
     /**
      * This changes the display name of the realm. The new name of the realm must not exceed 32 characters and mustn't
-     * be null or empty. Otherwise this action will fail.
+     * be null or empty. Otherwise, this action will fail.
      *
      * <br><br> Since this has to be requested at the Cytooxien Realms
      * Backend Management service, this method returns an {@link Action} and is rate-limited.
-     * @param name The new name of the realm
+     * @param name The new name of the realm as legacy formatted string (supporting section color codes)
      * @return the action containing the success state
      */
     Action<Void> changeName(String name);
+
+    /**
+     * This changes the display name of the realm. The new name of the realm must not exceed 32 characters and mustn't
+     * be null or empty. Otherwise, this action will fail.
+     *
+     * <br><br> Since this has to be requested at the Cytooxien Realms
+     * Backend Management service, this method returns an {@link Action} and is rate-limited.
+     * @param name The new name of the realm as adventure component
+     * @return the action containing the success state
+     */
+    Action<Void> changeName(Component name);
 
     /**
      * This changes the description of the realm. The new description of the realm must not exceed 128 characters otherwise this action will fail.
