@@ -2,20 +2,22 @@
 # Realms Api
 This is the repository of the Cytooxien Realm API. Here you can find the wiki which contain basic information about the usage of this API.
 
+[![](https://jitpack.io/v/cytooxien/realms-api.svg)](https://jitpack.io/#cytooxien/realms-api)
+
 ## Maven
 Repository:
 ```xml
-<repository>  
-   <id>cytooxien-realms-api</id>  
-   <url>https://maven.pkg.github.com/Cytooxien/Realms-API</url>  
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
 </repository>
 ```
 Dependencies:
 ```xml
 <dependency>  
-   <groupId>de.cytooxien</groupId>  
+   <groupId>com.github.cytooxien</groupId>  
    <artifactId>realms-api</artifactId>  
-   <version>3.0-SNAPSHOT</version>  
+   <version>3.0-20240519193357</version>  
    <scope>provided</scope>  
 </dependency>
 ```
@@ -25,14 +27,14 @@ Repository:
 ```gradle
 repositories {
     maven {
-        url 'https://maven.pkg.github.com/Cytooxien/Realms-API'
+        url 'https://jitpack.io'
     }
 }
 ```
 Dependencies:
 ```gradle
 dependencies {
-    compileOnly 'de.cytooxien:realms-api:3.0-SNAPSHOT'
+    compileOnly 'com.github.cytooxien:realms-api:3.0-20240519193357'
 }
 ```
 
