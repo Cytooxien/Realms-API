@@ -1,8 +1,8 @@
 package de.cytooxien.realms.api;
 
 import com.mojang.authlib.properties.Property;
+import de.cytooxien.realms.api.enums.Language;
 
-import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -10,12 +10,14 @@ import java.util.UUID;
  * without the need to use the mojang api.
  * <br><br>
  * Date: 04.10.2021
+ *
  * @author Exceptionflug
  */
 public interface PlayerInformationProvider {
 
     /**
      * This will resolve the name of a cytooxien player.
+     *
      * @param uniqueId The uuid of the player
      * @return The username or null if the player was never on cytooxien
      */
@@ -23,6 +25,7 @@ public interface PlayerInformationProvider {
 
     /**
      * This will resolve the unique id of a cytooxien player.
+     *
      * @param name The name of the cytooxien player
      * @return The unique id or null if the player was never on cytooxien
      */
@@ -30,6 +33,7 @@ public interface PlayerInformationProvider {
 
     /**
      * This will resolve the player's texture property of a cytooxien player.
+     *
      * @param uniqueId The unique id of the player
      * @return The property or null if the player was never on cytooxien
      */
@@ -37,9 +41,10 @@ public interface PlayerInformationProvider {
 
     /**
      * This will return the Cytooxien language of that player.
+     *
      * @param uniqueId The unique id of the player
      * @return The language the player has selected
      */
-    String language(UUID uniqueId);
+    Language language(UUID uniqueId);
 
 }
