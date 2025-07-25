@@ -1,7 +1,7 @@
 package de.cytooxien.realms.api;
 
 import de.cytooxien.realms.api.model.DefinedWorld;
-import de.cytooxien.realms.api.world.WorldRule;
+import de.cytooxien.realms.api.enums.WorldRule;
 import org.bukkit.World;
 
 import java.util.List;

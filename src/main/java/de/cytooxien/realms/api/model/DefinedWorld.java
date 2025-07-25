@@ -1,7 +1,7 @@
 package de.cytooxien.realms.api.model;
 
-import de.cytooxien.realms.api.world.WorldPreset;
-import de.cytooxien.realms.api.world.WorldRule;
+import de.cytooxien.realms.api.enums.WorldPreset;
+import de.cytooxien.realms.api.enums.WorldRule;
 
 import java.io.File;
 import java.util.Map;
