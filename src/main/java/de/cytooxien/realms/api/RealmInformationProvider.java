@@ -1,8 +1,10 @@
 package de.cytooxien.realms.api;
 
+import de.cytooxien.realms.api.model.Boost;
 import de.cytooxien.realms.api.model.Limits;
 import net.kyori.adventure.text.Component;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -48,10 +50,23 @@ public interface RealmInformationProvider {
 
     /**
      * This will query the amount of active boosts, that a player has used on that realm.
-     * @param playerId the player id to check
+     * @param playerId the player UUID to check
      * @return the count of boosts
      */
     Action<Integer> boostsByPlayer(UUID playerId);
+
+    /**
+     * This will query all the active boosts which a player has used on that realm.
+     * @param playerId the player UUID to check
+     * @return {@link List<Boost>} of the boosts
+     */
+    Action<Boost[]> boostsOfPlayer(UUID playerId);
+
+    /**
+     * This will query all active boosts a realm has.
+     * @return {@link List<Boost>} of all active boosts
+     */
+    Action<Boost[]> boosts();
 
     /**
      * Limits are specified by the realm boost level.
