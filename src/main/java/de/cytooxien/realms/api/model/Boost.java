@@ -14,11 +14,11 @@ public class Boost {
         this.expireDate = expireDate;
     }
 
-    public static Boost create(UUID uniqueId, int amount, Date expireDate) {
-        return new Boost(uniqueId, expireDate);
+    public static Boost create(UUID playerId, Date expireDate) {
+        return new Boost(playerId, expireDate);
     }
 
-    public UUID getUniqueId() {
+    public UUID getPlayerId() {
         return playerId;
     }
 
@@ -30,7 +30,7 @@ public class Boost {
     @Override
     public String toString() {
         return "Boost{" +
-                "uniqueId=" + playerId +
+                "playerId=" + playerId +
                 ", expireDate=" + expireDate.toString() +
                 '}';
     }
