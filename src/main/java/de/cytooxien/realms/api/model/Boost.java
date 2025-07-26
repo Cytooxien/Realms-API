@@ -16,11 +16,11 @@ public class Boost {
         this.expireDate = expireDate;
     }
 
-    public static Boost create(UUID uniqueId, int amount, Date expireDate) {
-        return new Boost(uniqueId, amount, expireDate);
+    public static Boost create(UUID playerId, int amount, Date expireDate) {
+        return new Boost(playerId, amount, expireDate);
     }
 
-    public UUID getUniqueId() {
+    public UUID getPlayerId() {
         return playerId;
     }
 
