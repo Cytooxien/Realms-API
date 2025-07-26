@@ -49,20 +49,6 @@ public interface RealmInformationProvider {
     int boostCount();
 
     /**
-     * This will query the amount of active boosts, that a player has used on that realm.
-     * @param playerId the player UUID to check
-     * @return the count of boosts
-     */
-    Action<Integer> boostsByPlayer(UUID playerId);
-
-    /**
-     * This will query all the active boosts which a player has used on that realm.
-     * @param playerId the player UUID to check
-     * @return {@link List<Boost>} of the boosts
-     */
-    Action<Boost[]> boostsOfPlayer(UUID playerId);
-
-    /**
      * This will query all active boosts a realm has.
      * @return {@link List<Boost>} of all active boosts
      */

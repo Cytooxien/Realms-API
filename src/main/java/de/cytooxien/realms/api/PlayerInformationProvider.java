@@ -2,7 +2,9 @@ package de.cytooxien.realms.api;
 
 import com.mojang.authlib.properties.Property;
 import de.cytooxien.realms.api.enums.Language;
+import de.cytooxien.realms.api.model.Boost;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -46,5 +48,19 @@ public interface PlayerInformationProvider {
      * @return The language the player has selected
      */
     Language language(UUID uniqueId);
+
+    /**
+     * This will query the amount of active boosts, that the player has used on the realm.
+     * @param playerId the player UUID to check
+     * @return the count of boosts
+     */
+    Action<Integer> boostCount(UUID playerId);
+
+    /**
+     * This will query all the active boosts which the player has used on the realm.
+     * @param playerId the player UUID to check
+     * @return {@link List<Boost>} of the boosts
+     */
+    Action<Boost[]> boosts(UUID playerId);
 
 }
