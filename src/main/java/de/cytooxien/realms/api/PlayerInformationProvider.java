@@ -4,6 +4,7 @@ import com.mojang.authlib.properties.Property;
 import de.cytooxien.realms.api.enums.JoinReason;
 import de.cytooxien.realms.api.enums.Language;
 import de.cytooxien.realms.api.model.Boost;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.UUID;
@@ -69,6 +70,7 @@ public interface PlayerInformationProvider {
      * @param playerId the player UUID to check
      * @return the JoinReason
      */
-    Action<JoinReason> joinReason(UUID playerId);
+    @Nullable
+    JoinReason joinReason(UUID playerId);
 
 }
