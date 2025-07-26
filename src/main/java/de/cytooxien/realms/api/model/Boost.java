@@ -1,29 +1,28 @@
 package de.cytooxien.realms.api.model;
 
-import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
 public class Boost {
 
     private final UUID playerId;
-    private final Date expireDate;
+    private final long expireTimestamp;
 
-    private Boost(UUID playerId, Date expireDate) {
+    private Boost(UUID playerId, long expireTimestamp) {
         this.playerId = playerId;
-        this.expireDate = expireDate;
+        this.expireTimestamp = expireTimestamp;
     }
 
-    public static Boost create(UUID playerId, Date expireDate) {
-        return new Boost(playerId, expireDate);
+    public static Boost create(UUID playerId, long expireTimestamp) {
+        return new Boost(playerId, expireTimestamp);
     }
 
     public UUID getPlayerId() {
         return playerId;
     }
 
-    public Date getExpireDate() {
-        return expireDate;
+    public long getExpireTimestamp() {
+        return expireTimestamp;
     }
 
 
@@ -31,12 +30,12 @@ public class Boost {
     public String toString() {
         return "Boost{" +
                 "playerId=" + playerId +
-                ", expireDate=" + expireDate.toString() +
+                ", expireTimestamp=" + expireTimestamp +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playerId, expireDate);
+        return Objects.hash(playerId, expireTimestamp);
     }
 }
