@@ -36,7 +36,7 @@ public class Boost {
     @Override
     public String toString() {
         return "Boost{" +
-                "uniqueId=" + playerId +
+                "playerId=" + playerId +
                 ", amount=" + amount +
                 ", expireDate=" + expireDate.toString() +
                 '}';
