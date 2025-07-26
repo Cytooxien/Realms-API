@@ -1,6 +1,7 @@
 package de.cytooxien.realms.api;
 
 import com.mojang.authlib.properties.Property;
+import de.cytooxien.realms.api.enums.JoinReason;
 import de.cytooxien.realms.api.enums.Language;
 import de.cytooxien.realms.api.model.Boost;
 
@@ -62,5 +63,12 @@ public interface PlayerInformationProvider {
      * @return {@link List<Boost>} of the boosts
      */
     Action<Boost[]> boosts(UUID playerId);
+
+    /**
+     *  This will return the JoinReason of the player
+     * @param playerId the player UUID to check
+     * @return the JoinReason
+     */
+    Action<JoinReason> joinReason(UUID playerId);
 
 }
