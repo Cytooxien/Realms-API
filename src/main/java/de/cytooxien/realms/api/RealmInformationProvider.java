@@ -5,7 +5,6 @@ import de.cytooxien.realms.api.model.Limits;
 import net.kyori.adventure.text.Component;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * This interface provides basic information about the realm.
@@ -13,6 +12,7 @@ import java.util.UUID;
  * the maximum allowed player count, the name or some other stuff.
  * <br><br>
  * Date: 30.06.2021
+ *
  * @author Exceptionflug
  */
 public interface RealmInformationProvider {
@@ -50,9 +50,10 @@ public interface RealmInformationProvider {
 
     /**
      * This will query all active boosts a realm has.
+     *
      * @return {@link List<Boost>} of all active boosts
      */
-    Action<Boost[]> boosts();
+    Action<List<Boost>> boosts();
 
     /**
      * Limits are specified by the realm boost level.
@@ -89,6 +90,7 @@ public interface RealmInformationProvider {
      *
      * <br><br> Since this has to be requested at the Cytooxien Realms
      * Backend Management service, this method returns an {@link Action} and is rate-limited.
+     *
      * @param name The new name of the realm as legacy formatted string (supporting section color codes)
      * @return the action containing the success state
      */
@@ -100,6 +102,7 @@ public interface RealmInformationProvider {
      *
      * <br><br> Since this has to be requested at the Cytooxien Realms
      * Backend Management service, this method returns an {@link Action} and is rate-limited.
+     *
      * @param name The new name of the realm as adventure component
      * @return the action containing the success state
      */
@@ -110,6 +113,7 @@ public interface RealmInformationProvider {
      *
      * <br><br> Since this has to be requested at the Cytooxien Realms
      * Backend Management service, this method returns an {@link Action} and is rate-limited.
+     *
      * @param description The new realm description
      * @return the action containing the success state
      */

@@ -63,7 +63,7 @@ public interface PlayerInformationProvider {
      * @param playerId the player UUID to check
      * @return {@link List<Boost>} of the boosts
      */
-    Action<Boost[]> boosts(UUID playerId);
+    Action<List<Boost>> boosts(UUID playerId);
 
     /**
      *  This will return the JoinReason of the player
