@@ -38,4 +38,12 @@ public class Boost {
     public int hashCode() {
         return Objects.hash(playerId, expireTimestamp);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Boost that = (Boost) o;
+        return playerId == that.playerId && expireTimestamp == that.expireTimestamp;
+    }
 }
