@@ -2,13 +2,13 @@ package de.cytooxien.realms.api.model;
 
 import java.util.UUID;
 
-public record Boost (UUID playerId, long expireTimestamp) {
+public record Boost(UUID playerId, long expireTimestamp) {
 
-    public UUID getPlayerId() {
+    public UUID playerId() {
         return playerId;
     }
 
-    public long getExpireTimestamp() {
+    public long expireTimestamp() {
         return expireTimestamp;
     }
 

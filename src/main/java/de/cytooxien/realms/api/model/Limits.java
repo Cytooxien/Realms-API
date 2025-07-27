@@ -1,50 +1,38 @@
 package de.cytooxien.realms.api.model;
 
-import java.util.Objects;
-
 /**
  * This model class specifies the limits of the realm according to it's current boost level.
- *
+ * <p>
  * Date: 30.06.2021
  *
  * @author Exceptionflug
  */
-public class Limits {
+public record Limits(long cpuLimit,
+                     long memoryMegabytes,
+                     long diskMegabytes,
+                     int loadedWorldsCount,
+                     int customGroupsCount,
+                     int unusedShutdownMinutes,
+                     int stoppedUnloadMinutes,
+                     boolean customPlugins,
+                     int pluginCount,
+                     int maxPlayers,
+                     boolean subdomain) {
 
-    private final long cpuLimit;
-    private final long memoryMegabytes;
-    private final long diskMegabytes;
-    private final int loadedWorldsCount;
-    private final int customGroupsCount;
-    private final int unusedShutdownMinutes;
-    private final int stoppedUnloadMinutes;
-    private final boolean customPlugins;
-    private final int pluginCount;
-    private final int maxPlayers;
-    private final boolean subdomain;
-
-    private Limits(long cpuLimit,
-                   long memoryMegabytes,
-                   long diskMegabytes,
-                   int loadedWorldsCount,
-                   int customGroupsCount,
-                   int unusedShutdownMinutes,
-                   int stoppedUnloadMinutes,
-                   boolean customPlugins,
-                   int pluginCount,
-                   int maxPlayers,
-                   boolean subdomain) {
-        this.cpuLimit = cpuLimit;
-        this.memoryMegabytes = memoryMegabytes;
-        this.diskMegabytes = diskMegabytes;
-        this.loadedWorldsCount = loadedWorldsCount;
-        this.customGroupsCount = customGroupsCount;
-        this.unusedShutdownMinutes = unusedShutdownMinutes;
-        this.stoppedUnloadMinutes = stoppedUnloadMinutes;
-        this.customPlugins = customPlugins;
-        this.pluginCount = pluginCount;
-        this.maxPlayers = maxPlayers;
-        this.subdomain = subdomain;
+    public static Limits create(long cpuLimit,
+                                long memoryMegabytes,
+                                long diskMegabytes,
+                                int loadedWorldsCount,
+                                int customGroupsCount,
+                                int unusedShutdownMinutes,
+                                int stoppedUnloadMinutes,
+                                boolean customPlugins,
+                                int pluginCount,
+                                int maxPlayers,
+                                boolean subdomain) {
+        return new Limits(cpuLimit, memoryMegabytes, diskMegabytes, loadedWorldsCount,
+                customGroupsCount, unusedShutdownMinutes, stoppedUnloadMinutes, customPlugins,
+                pluginCount, maxPlayers, subdomain);
     }
 
     public long cpuLimit() {
@@ -89,35 +77,6 @@ public class Limits {
 
     public boolean subdomain() {
         return subdomain;
-    }
-
-    public static Limits create(long cpuLimit,
-                                long memoryMegabytes,
-                                long diskMegabytes,
-                                int loadedWorldsCount,
-                                int customGroupsCount,
-                                int unusedShutdownMinutes,
-                                int stoppedUnloadMinutes,
-                                boolean customPlugins,
-                                int pluginCount,
-                                int maxPlayers,
-                                boolean subdomain) {
-        return new Limits(cpuLimit, memoryMegabytes, diskMegabytes, loadedWorldsCount,
-                customGroupsCount, unusedShutdownMinutes, stoppedUnloadMinutes, customPlugins,
-                pluginCount, maxPlayers, subdomain);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Limits limits = (Limits) o;
-        return cpuLimit == limits.cpuLimit && memoryMegabytes == limits.memoryMegabytes && diskMegabytes == limits.diskMegabytes && loadedWorldsCount == limits.loadedWorldsCount && customGroupsCount == limits.customGroupsCount && unusedShutdownMinutes == limits.unusedShutdownMinutes && stoppedUnloadMinutes == limits.stoppedUnloadMinutes && customPlugins == limits.customPlugins && pluginCount == limits.pluginCount && maxPlayers == limits.maxPlayers && subdomain == limits.subdomain;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(cpuLimit, memoryMegabytes, diskMegabytes, loadedWorldsCount, customGroupsCount, unusedShutdownMinutes, stoppedUnloadMinutes, customPlugins, pluginCount, maxPlayers, subdomain);
     }
 
     @Override
