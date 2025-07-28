@@ -7,14 +7,15 @@ import org.bukkit.event.player.PlayerEvent;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This is an event which gets called when a player changes their Cytooxien language.
+ * Event triggered when a player changes their Cytooxien language.
+ * Provides access to the old and new language.
  */
 public class RealmPlayerLanguageChangeEvent extends PlayerEvent {
 
     private static final HandlerList HANDLER_LIST = new HandlerList();
 
-    private Language newLanguage;
-    private Language oldLanguage;
+    private final Language newLanguage;
+    private final Language oldLanguage;
 
     public RealmPlayerLanguageChangeEvent(@NotNull Player who, @NotNull Language newLanguage, @NotNull Language oldLanguage) {
         super(who);
@@ -33,7 +34,7 @@ public class RealmPlayerLanguageChangeEvent extends PlayerEvent {
     }
 
     @Override
-    public HandlerList getHandlers() {
+    public @NotNull HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 

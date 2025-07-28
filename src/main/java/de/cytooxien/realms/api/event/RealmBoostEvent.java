@@ -10,8 +10,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.UUID;
 
 /**
- * This is an event which gets called when the realm gets boosted by a player.
- * If the realm is offline or paused, the events get called once it's back up again.
+ * Event triggered when a player boosts a realm.
+ * If the realm is offline or paused, the event will be triggered once the realm is back online.
  */
 public class RealmBoostEvent extends Event {
 

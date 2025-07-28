@@ -7,6 +7,10 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Event triggered when a player joins a realm.
+ * Contains the reason for joining as well as an optional join message.
+ */
 public class RealmPlayerJoinEvent extends PlayerJoinEvent {
 
     private final JoinReason joinReason;

@@ -5,8 +5,8 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This is an event which gets called when the realm prepares to get paused.
- * There isn't much time in between the RealmPrePauseEvent and the actual pause of the realm.
+ * Event triggered when a realm is about to be paused.
+ * There is only a short time between the RealmPrePauseEvent and the actual pause of the realm.
  */
 public class RealmPrePauseEvent extends Event {
 

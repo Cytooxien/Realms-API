@@ -1,5 +1,7 @@
 package de.cytooxien.realms.api.model;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This model class specifies the limits of the realm according to it's current boost level.
  * <p>
@@ -36,7 +38,7 @@ public record Limits(long cpuLimit,
     }
 
     @Override
-    public String toString() {
+    public @NotNull String toString() {
         return "Limits{" +
                 "cpuLimit=" + cpuLimit +
                 ", memoryMegabytes=" + memoryMegabytes +

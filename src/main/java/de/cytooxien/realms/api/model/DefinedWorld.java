@@ -2,6 +2,7 @@ package de.cytooxien.realms.api.model;
 
 import de.cytooxien.realms.api.enums.WorldPreset;
 import de.cytooxien.realms.api.enums.WorldRule;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.Map;
@@ -21,7 +22,7 @@ public record DefinedWorld(UUID uniqueId, String displayName, File worldFolder, 
     }
 
     @Override
-    public String toString() {
+    public @NotNull String toString() {
         return "DefinedWorld{" +
                 "uniqueId=" + uniqueId +
                 ", displayName='" + displayName + '\'' +

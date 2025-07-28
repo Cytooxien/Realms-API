@@ -5,7 +5,7 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This is an event which gets called after the realm resumes after a paused state.
+ * This is an event that gets called after the realm resumes after a paused state.
  */
 public class RealmPostPauseEvent extends Event {
 

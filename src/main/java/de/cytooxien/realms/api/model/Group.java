@@ -1,6 +1,7 @@
 package de.cytooxien.realms.api.model;
 
 import net.kyori.adventure.text.Component;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 import java.util.UUID;
@@ -22,7 +23,7 @@ public record Group(UUID uniqueId, String name, Component prefix, char color, in
     }
 
     @Override
-    public String toString() {
+    public @NotNull String toString() {
         return "Group{" +
                 "uniqueId=" + uniqueId +
                 ", name='" + name + '\'' +
