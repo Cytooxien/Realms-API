@@ -6,7 +6,7 @@
 
     <groupId>de.cytooxien</groupId>
     <artifactId>realms-api</artifactId>
-    <version>3.1</version>
+    <version>4.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.20.4-R0.1-SNAPSHOT</version>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

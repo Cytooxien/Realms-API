@@ -20,30 +20,6 @@ public record DefinedWorld(UUID uniqueId, String displayName, File worldFolder, 
         return new DefinedWorld(uniqueId, displayName, worldFolder, loaded, preset, rules);
     }
 
-    public UUID uniqueId() {
-        return uniqueId;
-    }
-
-    public String displayName() {
-        return displayName;
-    }
-
-    public File worldFolder() {
-        return worldFolder;
-    }
-
-    public boolean loaded() {
-        return loaded;
-    }
-
-    public WorldPreset preset() {
-        return preset;
-    }
-
-    public Map<WorldRule, Boolean> rules() {
-        return rules;
-    }
-
     @Override
     public String toString() {
         return "DefinedWorld{" +

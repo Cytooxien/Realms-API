@@ -35,50 +35,6 @@ public record Limits(long cpuLimit,
                 pluginCount, maxPlayers, subdomain);
     }
 
-    public long cpuLimit() {
-        return cpuLimit;
-    }
-
-    public long memoryMegabytes() {
-        return memoryMegabytes;
-    }
-
-    public long diskMegabytes() {
-        return diskMegabytes;
-    }
-
-    public int loadedWorldsCount() {
-        return loadedWorldsCount;
-    }
-
-    public int customGroupsCount() {
-        return customGroupsCount;
-    }
-
-    public int unusedShutdownMinutes() {
-        return unusedShutdownMinutes;
-    }
-
-    public int stoppedUnloadMinutes() {
-        return stoppedUnloadMinutes;
-    }
-
-    public boolean customPlugins() {
-        return customPlugins;
-    }
-
-    public int pluginCount() {
-        return pluginCount;
-    }
-
-    public int maxPlayers() {
-        return maxPlayers;
-    }
-
-    public boolean subdomain() {
-        return subdomain;
-    }
-
     @Override
     public String toString() {
         return "Limits{" +

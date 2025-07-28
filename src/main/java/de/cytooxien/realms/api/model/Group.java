@@ -21,30 +21,6 @@ public record Group(UUID uniqueId, String name, Component prefix, char color, in
         return new Group(uuid, name, prefix, color, priority, requiredBoosts, permissions);
     }
 
-    public String name() {
-        return name;
-    }
-
-    public Component prefix() {
-        return prefix;
-    }
-
-    public char color() {
-        return color;
-    }
-
-    public int priority() {
-        return priority;
-    }
-
-    public Set<String> permissions() {
-        return permissions;
-    }
-
-    public UUID uniqueId() {
-        return uniqueId;
-    }
-
     @Override
     public String toString() {
         return "Group{" +
