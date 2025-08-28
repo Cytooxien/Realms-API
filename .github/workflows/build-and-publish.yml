@@ -3,7 +3,7 @@ name: Build and Publish to GitHub Maven
 on:
   push:
     branches:
-      - '**'
+      - 'master'
 
 jobs:
   build:
@@ -11,49 +11,78 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
           cache: maven
 
-      - name: Extract current version
+      - name: Extract version from pom.xml
         id: extract_version
-        run: echo "::set-output name=BASE_VERSION::$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)"
-
-      - name: Temporarily bump version
-        id: bump_version
+        shell: bash
         run: |
-          BASE_VERSION=${{ steps.extract_version.outputs.BASE_VERSION }}
-          NEW_VERSION="${BASE_VERSION}-$(date +%Y%m%d%H%M%S)"
-          echo "New version: $NEW_VERSION"
-          mvn versions:set -DnewVersion=$NEW_VERSION
-          echo "::set-output name=NEW_VERSION::$NEW_VERSION"
+          BASE_VERSION=$(mvn -q -Dexec.cleanupDaemonThreads=false help:evaluate -Dexpression=project.version -DforceStdout)
+          echo "BASE_VERSION=$BASE_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Validate SemVer version
+        id: validate_semver
+        shell: bash
+        run: |
+          VERSION='${{ steps.extract_version.outputs.BASE_VERSION }}'
+          echo "Detected project version: $VERSION"
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z\.-]+)?(\+[0-9A-Za-z\.-]+)?$ ]]; then
+            echo "Error: Version in pom.xml ('$VERSION') is not SemVer (expected MAJOR.MINOR.PATCH)." >&2
+            echo "Please update <version> in pom.xml to a valid SemVer (e.g., 4.0.0 or 4.0.1-rc.1)." >&2
+            exit 1
+          fi
+          echo "NEW_VERSION=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn -B clean install
+
+      - name: Ensure tag does not already exist
+        shell: bash
+        run: |
+          NEW_VERSION='${{ steps.validate_semver.outputs.NEW_VERSION }}'
+          git fetch --tags --quiet
+          if git rev-parse -q --verify "refs/tags/${NEW_VERSION}" >/dev/null; then
+            echo "Tag ${NEW_VERSION} already exists. Please bump the version in pom.xml." >&2
+            exit 1
+          fi
 
       - name: Create and push tag
+        shell: bash
         run: |
-          NEW_VERSION=${{ steps.bump_version.outputs.NEW_VERSION }}
-          git tag $NEW_VERSION
-          git push origin $NEW_VERSION
+          NEW_VERSION='${{ steps.validate_semver.outputs.NEW_VERSION }}'
+          echo "Tagging release ${NEW_VERSION}"
+          git tag "${NEW_VERSION}"
+          git push origin "${NEW_VERSION}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Maven settings
         run: |
-          mkdir -p $HOME/.m2
-          echo '<settings><servers><server><id>github</id><username>${env.GITHUB_ACTOR}</username><password>${{ secrets.GITHUB_TOKEN }}</password></server></servers></settings>' > $HOME/.m2/settings.xml
+          mkdir -p "$HOME/.m2"
+          cat > "$HOME/.m2/settings.xml" <<'EOF'
+          <settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${env.GITHUB_ACTOR}</username>
+                <password>${env.GITHUB_TOKEN}</password>
+              </server>
+            </servers>
+          </settings>
+          EOF
         shell: bash
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to GitHub Packages
-        run: mvn deploy -DskipTests
+        run: mvn -B deploy -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
