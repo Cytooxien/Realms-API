@@ -1,9 +1,10 @@
 package de.cytooxien.realms.api;
 
+import de.cytooxien.realms.api.model.Boost;
 import de.cytooxien.realms.api.model.Limits;
 import net.kyori.adventure.text.Component;
 
-import java.util.UUID;
+import java.util.List;
 
 /**
  * This interface provides basic information about the realm.
@@ -11,6 +12,7 @@ import java.util.UUID;
  * the maximum allowed player count, the name or some other stuff.
  * <br><br>
  * Date: 30.06.2021
+ *
  * @author Exceptionflug
  */
 public interface RealmInformationProvider {
@@ -47,11 +49,11 @@ public interface RealmInformationProvider {
     int boostCount();
 
     /**
-     * This will query the amount of active boosts, that a player has used on that realm.
-     * @param playerId the player id to check
-     * @return the count of boosts
+     * This will query all active boosts a realm has.
+     *
+     * @return {@link List<Boost>} of all active boosts
      */
-    Action<Integer> boostsByPlayer(UUID playerId);
+    Action<List<Boost>> boosts();
 
     /**
      * Limits are specified by the realm boost level.
@@ -88,6 +90,7 @@ public interface RealmInformationProvider {
      *
      * <br><br> Since this has to be requested at the Cytooxien Realms
      * Backend Management service, this method returns an {@link Action} and is rate-limited.
+     *
      * @param name The new name of the realm as legacy formatted string (supporting section color codes)
      * @return the action containing the success state
      */
@@ -99,6 +102,7 @@ public interface RealmInformationProvider {
      *
      * <br><br> Since this has to be requested at the Cytooxien Realms
      * Backend Management service, this method returns an {@link Action} and is rate-limited.
+     *
      * @param name The new name of the realm as adventure component
      * @return the action containing the success state
      */
@@ -109,6 +113,7 @@ public interface RealmInformationProvider {
      *
      * <br><br> Since this has to be requested at the Cytooxien Realms
      * Backend Management service, this method returns an {@link Action} and is rate-limited.
+     *
      * @param description The new realm description
      * @return the action containing the success state
      */

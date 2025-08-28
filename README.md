@@ -17,7 +17,7 @@ Dependencies:
 <dependency>  
    <groupId>com.github.cytooxien</groupId>  
    <artifactId>realms-api</artifactId>  
-   <version>3.0-20240519193357</version>  
+   <version>4.0.0</version>  
    <scope>provided</scope>  
 </dependency>
 ```
@@ -34,7 +34,7 @@ repositories {
 Dependencies:
 ```gradle
 dependencies {
-    compileOnly 'com.github.cytooxien:realms-api:3.0-20240519193357'
+    compileOnly 'com.github.cytooxien:realms-api:4.0.0'
 }
 ```
 
@@ -47,22 +47,16 @@ RealmInformationProvider informationProvider = Bukkit.getServicesManager().load(
 ## Access Display System
 You can access the display system using the following code:
 ```java
-DisplayController controller = JavaPlugin.getPlugin(DisplayPlugin.class).displayController();
+DisplayProvider displayProvider = Bukkit.getServicesManager().load(DisplayProvider.class);
 ```
 
 ### Changing the prefix of a player
 This is a quick example on how to change the prefix of a player:
-```java
-DisplayController controller = JavaPlugin.getPlugin(DisplayPlugin.class).displayController();
-MasterDisplayData masterDisplayData = controller.getCache().getMaster(player.getUniqueId());
-// This sets prefix to "§a" for CHAT, TABLIST and NAMETAG
-masterDisplayData.getPrefixes().forEach((displayTarget, map) -> map.put("group", "§a"));
-```
 
-### Add suffix for a player which can only be seen by another player
-You can edit the DisplayData for a special viewer:
 ```java
-DisplayController controller = JavaPlugin.getPlugin(DisplayPlugin.class).displayController();
-DiffedDisplayData diff = controller.getCache().getDiff(player.getUniqueId(), viewer.getUniqueId());
-diff.getSuffixes().get(DisplayTarget.TABLIST).put("party", "§8[§dParty§8]");
+DisplayProvider displayProvider = Bukkit.getServicesManager().load(DisplayProvider.class);
+// changes the chat prefix of a player
+displayProvider.setCustomChatPrefix(player, Component.text("Group", NamedTextColor.RED));
+// changes the tab prefix of a player
+displayProvider.setCustomTabPrefix(player, Component.text("Group", NamedTextColor.RED));
 ```
