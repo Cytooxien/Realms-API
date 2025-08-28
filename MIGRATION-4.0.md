@@ -105,6 +105,6 @@ public void onPostPause(RealmPostPauseEvent e) { /* ... */ }
 - Replace `boostsByPlayer(...)` with `PlayerInformationProvider.boostCount(...)` / `boosts(...)`.
 - Update model access to record component methods (no JavaBean getters).
 - Adjust any `Boost` handling to `expireTimestamp` (epoch seconds) and `List<Boost>`.
-- Build against minimum Paper 1.21.1 and Java 17.
+- Build against minimum Paper 1.21.1 and Java 21.
 
 If you run into anything not covered here, please open an issue with code examples so we can extend this guide.
