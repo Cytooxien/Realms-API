@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented in this file.
 
+## 4.0.1
+
+### Fixed
+- Derive `RealmPlayerJoinEvent` from `PlayerEvent` (was `PlayerJoinEvent`).
+- Add a dedicated `HandlerList` and decouple dispatch from Bukkit's `PlayerJoinEvent` pipeline.
+
 ## 4.0.0
 
 This is a major release with breaking API changes.

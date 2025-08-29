@@ -6,7 +6,7 @@
 
     <groupId>com.github.cytooxien</groupId>
     <artifactId>realms-api</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

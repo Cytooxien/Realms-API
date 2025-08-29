@@ -17,7 +17,7 @@ Dependencies:
 <dependency>  
    <groupId>com.github.cytooxien</groupId>  
    <artifactId>realms-api</artifactId>  
-   <version>4.0.0</version>  
+   <version>4.0.1</version>  
    <scope>provided</scope>  
 </dependency>
 ```
@@ -34,7 +34,7 @@ repositories {
 Dependencies:
 ```gradle
 dependencies {
-    compileOnly 'com.github.cytooxien:realms-api:4.0.0'
+    compileOnly 'com.github.cytooxien:realms-api:4.0.1'
 }
 ```
 

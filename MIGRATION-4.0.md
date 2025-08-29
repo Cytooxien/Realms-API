@@ -1,8 +1,8 @@
-# Migration Guide: 3.x → 4.0.0
+# Migration Guide: 3.x → 4.0.1
 
-This guide helps you upgrade your plugins and integrations from Realms API 3.x to 4.0.0.
+This guide helps you upgrade your plugins and integrations from Realms API 3.x to 4.0.1.
 
-4.0.0 introduces SemVer versioning, new events, enum-based language handling, and record-based models. Several breaking API changes are listed below with concrete before/after examples.
+4.0.1 introduces SemVer versioning, new events, enum-based language handling, and record-based models. Several breaking API changes are listed below with concrete before/after examples.
 
 ## 1) Adjust Imports for World Enums
 
@@ -20,7 +20,7 @@ String lang = playerInfo.language(playerId);
 if ("DE".equalsIgnoreCase(lang)) { ... }
 ```
 
-After (4.0.0):
+After (4.0.1):
 
 ```java
 import de.cytooxien.realms.api.enums.Language;
@@ -99,7 +99,7 @@ public void onPostPause(RealmPostPauseEvent e) { /* ... */ }
 
 ## 7) Quick Checklist
 
-- Update dependency coordinates to JitPack and version `4.0.0`.
+- Update dependency coordinates to JitPack and version `4.0.1`.
 - Replace imports of `WorldRule`/`WorldPreset` to `...enums`.
 - Change `language(UUID)` usage to `Language` enum.
 - Replace `boostsByPlayer(...)` with `PlayerInformationProvider.boostCount(...)` / `boosts(...)`.
